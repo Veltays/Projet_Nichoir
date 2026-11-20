@@ -24,7 +24,7 @@ void setup() {
     
     pir.begin();
     ir.begin();
-    wifi.connect(ConfigService::getSsid(), ConfigService::getPassword());
+    wifi.connect(ConfigService::getSsid(1), ConfigService::getPassword(1));
     clockService.begin();
 
 }
