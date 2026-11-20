@@ -1,11 +1,12 @@
 
 #include "IR_driver.h"
-
+#include "Timer_service.h"
 /* CONSTRUCTEUR */
 
-IrDriver::IrDriver(uint8_t irPin)
+IrDriver::IrDriver(uint8_t irPin,TimerService timer)
 {
     setIrPin(irPin);
+    setTimerService(timer);
 }   
 
 
@@ -19,6 +20,26 @@ void IrDriver::begin()
     pinMode(getIrPin(), OUTPUT);
 }
 
+
+/* METIER */
+
+void IrDriver::On()
+{
+    digitalWrite(getIrPin(), HIGH);
+}
+
+
+void IrDriver::toggle(uint16_t duration)
+{
+    On();
+    getTimerService().sleep(duration);
+    Off();
+}
+
+void IrDriver::Off()
+{
+    digitalWrite(getIrPin(), LOW);
+}
 
 
 /* ACCESSEUR */
@@ -34,22 +55,14 @@ void IrDriver::setIrPin(uint8_t irPin)
 }
 
 
-/* METIER */
 
-void IrDriver::On()
+void IrDriver::setTimerService(TimerService timer)
 {
-    digitalWrite(getIrPin(), HIGH);
+    _timerService = timer;
 }
 
 
-void IrDriver::toggle(uint16_t duration)
+TimerService IrDriver::getTimerService()
 {
-    On();
-    delay(duration);
-    Off();
-}
-
-void IrDriver::Off()
-{
-    digitalWrite(getIrPin(), LOW);
+    return _timerService;
 }

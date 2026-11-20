@@ -1,20 +1,30 @@
 #include "PIR_driver.h"
-
+#include "Timer_service.h"
 volatile bool PirDriver::motionDetected = false;
 
-PirDriver::PirDriver(uint8_t pirPin)
+
+
+// constructeur
+PirDriver::PirDriver(uint8_t pirPin,TimerService timer)
 {
     setPirPin(pirPin);
+    setTimerService(timer);
 }
 
-uint8_t PirDriver::getPirPin()
+// Initialision
+void PirDriver::begin()
 {
-    return _pirPin;
+    pinMode(getPirPin(), INPUT);
+    setInterrupt();
 }
 
-void PirDriver::setPirPin(uint8_t pirPin)
+
+
+
+// Interrupt
+void PirDriver::detect_Motion()
 {
-    _pirPin = pirPin;
+    motionDetected = true;
 }
 
 void PirDriver::setInterrupt()
@@ -25,12 +35,9 @@ void PirDriver::setInterrupt()
         RISING);
 }
 
-void PirDriver::begin()
-{
-    pinMode(getPirPin(), INPUT);
-    setInterrupt();
-}
 
+
+// Metier
 bool PirDriver::isMotionDetected()
 {
     if (motionDetected)
@@ -44,7 +51,30 @@ bool PirDriver::isMotionDetected()
     }
 }
 
-void PirDriver::detect_Motion()
+
+
+
+/* Accesseur  */
+TimerService PirDriver::getTimerService()
 {
-    motionDetected = true;
+    return _timer;
 }
+
+void PirDriver::setTimerService(TimerService timer)
+{
+    _timer = timer;
+}
+
+uint8_t PirDriver::getPirPin()
+{
+    return _pirPin;
+}
+
+void PirDriver::setPirPin(uint8_t pirPin)
+{
+    _pirPin = pirPin;
+}
+
+
+
+

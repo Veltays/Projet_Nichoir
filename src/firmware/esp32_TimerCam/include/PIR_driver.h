@@ -6,15 +6,21 @@
 class PirDriver {
 private:
     uint8_t _pirPin;
+    TimerService _timer;
 
     static volatile bool motionDetected;
-    static void IRAM_ATTR detect_Motion();
-
-public:
-    PirDriver(uint8_t pirPin);
+    static void detect_Motion();
 
     uint8_t getPirPin();
     void setPirPin(uint8_t pirPin);
+
+    void setTimerService(TimerService timer);
+    TimerService getTimerService();
+
+public:
+    PirDriver(uint8_t pirPin,TimerService timer);
+
+
     void setInterrupt();
     void begin();
     bool isMotionDetected();

@@ -1,13 +1,14 @@
 #include <Arduino.h>
 #include "PIR_driver.h"
 #include "IR_driver.h"
+#include "Timer_service.h"
 
 #define PIR_PIN 13
 #define IR_LED_PIN 4
 
-PirDriver pir(PIR_PIN);
-IrDriver ir(IR_LED_PIN);
-
+TimerService timer;
+PirDriver pir(PIR_PIN,timer);
+IrDriver ir(IR_LED_PIN,timer);
 
 
 
@@ -28,11 +29,10 @@ void loop() {
             "Nombre de détections : %u\n" 
         );
         
-
         ir.toggle(1000);
         Serial.println("------------");
     }
 
 
-    delay(100);
+    timer.sleep(2000);
 }

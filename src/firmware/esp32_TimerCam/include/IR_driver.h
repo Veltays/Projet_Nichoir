@@ -7,13 +7,18 @@ class IrDriver
 {
     private:
         uint8_t _IrPin;
+        TimerService _timerService;
 
 
         uint8_t getIrPin();
         void setIrPin(uint8_t irPin);
 
+        void setTimerService(TimerService timer);
+        TimerService getTimerService();
+
+
     public:
-        IrDriver(uint8_t irPin);
+        IrDriver(uint8_t irPin,TimerService timer);
         
         void begin();
 
