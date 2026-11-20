@@ -10,11 +10,7 @@ IrDriver::IrDriver(uint8_t irPin,TimerService timer)
 }   
 
 
-
-
-
 /** INITIALISATION */
-
 void IrDriver::begin()
 {
     pinMode(getIrPin(), OUTPUT);
@@ -22,7 +18,6 @@ void IrDriver::begin()
 
 
 /* METIER */
-
 void IrDriver::On()
 {
     digitalWrite(getIrPin(), HIGH);
@@ -43,7 +38,6 @@ void IrDriver::Off()
 
 
 /* ACCESSEUR */
-
 uint8_t IrDriver::getIrPin()
 {
     return _IrPin;

@@ -2,6 +2,7 @@
 #define PIR_DRIVER_H
 
 #include <Arduino.h>
+#include "Timer_service.h"
 
 class PirDriver {
 private:

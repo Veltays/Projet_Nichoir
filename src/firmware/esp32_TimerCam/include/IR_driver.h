@@ -2,7 +2,7 @@
 #define IR_DRIVER_H
 
 #include <Arduino.h>
-
+#include "Timer_service.h"
 class IrDriver
 {
     private:
@@ -26,12 +26,6 @@ class IrDriver
 
         void On();
         void Off();
-
-
-
-
-
-
 
       
 };
