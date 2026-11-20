@@ -32,8 +32,6 @@ void setup() {
 
 
 void loop() {
-    Serial.print("Mouvement détecté à ");
-    Serial.println(millis());
 
 
     if(pir.isMotionDetected()) {
@@ -42,6 +40,12 @@ void loop() {
         Serial.println(clockService.getTime());
         Serial.println("------------");
         ir.toggle(1000);
+    } 
+    else
+    {
+        Serial.print("Aucun mouvement détecté à : ");
+        Serial.println(clockService.getTime());
+        Serial.println("------------");
     }
 
 

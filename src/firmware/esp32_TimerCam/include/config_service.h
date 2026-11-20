@@ -5,8 +5,8 @@
 
 class ConfigService {
 public:
-    static const char* getSsid(uint8_t index);
-    static const char* getPassword(uint8_t index);
+    static const char* getSsid(uint8_t wifiIndex);
+    static const char* getPassword(uint8_t wifiIndex);
 };
 
 #endif
