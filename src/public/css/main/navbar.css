@@ -1,0 +1,59 @@
+/* NavBar */
+
+.navbar{
+    background-color: #283618;
+    width: 20.83%;
+    height: 100vh;
+}
+
+
+
+.navbar__logo{
+    padding-top: 24px;
+    padding-left: 0px;
+    width: 90%;
+    height: 20%;
+}
+
+
+.navbar__separator{
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 254, 248, 0.14);
+}
+
+
+
+.navbar__category-name{
+    padding-top: 37px;
+    padding-left: 24px;
+}
+
+.navbar__category-name p {
+    color: rgba(255, 254, 248, 0.7);
+    font-size: 11px;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+
+
+.navbar__choice{
+    display :flex;
+    gap: 16px;
+    padding-left: 48px;
+}
+
+
+.navbar__choice-icon{
+    width: 16px;
+    height: 16px;
+}
+
+
+.navbar__choice-title p{
+    color: rgba(255, 254, 248, 0.7);
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+}
