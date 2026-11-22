@@ -27,6 +27,57 @@
 
 
 /*************************************************/
+/*        ====  CONNECTION STATUS  ====          */
+/*************************************************/
+
+.navbar__connection-card {
+    margin: var(--padding-xl) auto 0;
+    width: var(--size-navbar-content-width);
+    min-height: 88px;
+    padding: var(--padding-l);
+    background-color: var(--color-light-green);
+    border-radius: var(--radius-l);
+    color: var(--color-white);
+    font-family: var(--font-family-primary);
+}
+
+.navbar__connection-name {
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-regular);
+    letter-spacing: 0.01em;
+}
+
+.navbar__connection-status {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-l);
+    margin-top: var(--padding-l);
+}
+
+.navbar__connection-status strong {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semi-bold);
+}
+
+.navbar__connection-indicator {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    border-radius: 50%;
+    background-color: #b7f36a;
+    position: relative;
+}
+
+.navbar__connection-indicator::after {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+}
+
+
+/*************************************************/
 /*          ====  NAVBAR CATEGORY  ====          */
 /*************************************************/
 
