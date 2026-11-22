@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Istok+Web:wght@400;700&display=swap');
+
 :root {
     --font-family-primary: "Inter", sans-serif;
+    --font-family-secondary: "Istok Web", sans-serif;
 }
