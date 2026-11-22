@@ -9,7 +9,7 @@
 @import url("../token/opacity.css");
 @import url("./navbar.css");
 @import url("./mainsection.css");
-
+@import url("./bird-card.css");
 
 
 
@@ -19,11 +19,16 @@
     box-sizing: border-box;
 }
 
+html,
 body{
-    height: var(--size-full);
+    height: 100%;
+}
+
+body{
     width: var(--size-full);
     display: flex;
     flex-direction: row;
+    overflow: hidden;
 }
 
 
