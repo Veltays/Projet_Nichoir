@@ -1,0 +1,21 @@
+:root {
+    /*General sizes */
+    --size-full: 100%;
+
+
+    /* navbar sizes */
+    --size-navbar-width: 18%;
+    --size-navbar-height: 100vh;
+    --size-navbar-content-width: 90%;
+    --size-navbar-logo-height: 20%;
+    --size-navbar-separator-height: 1px;
+
+
+    /* Size of the active indicator for the navbar choice */
+    --size-navbar-active-indicator-width: 5px;
+    --size-navbar-active-indicator-height: 40px;
+
+
+    /* Size of all icons in the navbar */
+    --size-navbar-choice-icon: 16px;
+}

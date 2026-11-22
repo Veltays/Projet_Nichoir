@@ -2,6 +2,6 @@
 
 .main-section {
     flex: 1;
-    background-color: #F6F4E9;
+    background-color: var(--color-white);
 }
 

@@ -1,3 +1,12 @@
+@import url("../token/color.css");
+@import url("../token/font.css");
+@import url("../token/font-size.css");
+@import url("../token/bold.css");
+@import url("../token/radius.css");
+@import url("../token/padding.css");
+@import url("../token/gap.css");
+@import url("../token/size.css");
+@import url("../token/opacity.css");
 @import url("./navbar.css");
 @import url("./mainsection.css");
 
@@ -11,8 +20,8 @@
 }
 
 body{
-    height: 100%;
-    width: 100%;
+    height: var(--size-full);
+    width: var(--size-full);
     display: flex;
     flex-direction: row;
 }
