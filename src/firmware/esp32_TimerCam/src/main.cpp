@@ -1,4 +1,10 @@
 #include <Arduino.h>
+#include "PIR_driver.h"
+#include "IR_driver.h"
+#include "Timer_service.h"
+#include "wifi_driver.h"
+#include "clock_service.h"
+#include "config_service.h"
 
 
 #define PIR_PIN 13
@@ -6,23 +12,43 @@
 
 
 
+TimerService timer;
+PirDriver pir(PIR_PIN,timer);
+IrDriver ir(IR_LED_PIN,timer);
+WifiService wifi(timer);
+ClockService clockService;
+
+
 void setup() {
     Serial.begin(115200);
+    
+    pir.begin();
+    ir.begin();
+    wifi.connect(ConfigService::getSsid(1), ConfigService::getPassword(1));
+    clockService.begin();
 
-    digitalWrite(IR_LED_PIN, LOW);
-    pinMode(IR_LED_PIN, OUTPUT);
-    pinMode(PIR_PIN, INPUT);
 }
+
+
 
 void loop() {
-    if (digitalRead(PIR_PIN) == HIGH) 
+
+
+    if(pir.isMotionDetected()) {
+        
+        Serial.print("Mouvement détecté à : ");
+        Serial.println(clockService.getTime());
+        Serial.println("------------");
+        ir.toggle(1000);
+    } 
+    else
     {
-        digitalWrite(IR_LED_PIN, HIGH);
-        Serial.println("Mouvement détecté !");
-        delay(2000); // Eclairage pendant 2 secondes
-        digitalWrite(IR_LED_PIN, LOW);
+        Serial.print("Aucun mouvement détecté à : ");
+        Serial.println(clockService.getTime());
+        Serial.println("------------");
     }
 
-    delay(100);
-}
 
+
+    timer.sleep(2000);
+}
