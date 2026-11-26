@@ -1,0 +1,30 @@
+.bird__images{
+    position: relative;
+    height: 40%;
+    width: 100%;
+
+}
+
+.bird__images h1{
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-xxl);
+    color : var(--color-dark-green);
+    margin-bottom: var(--gap-l);
+}
+
+
+.bird__images-list{
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap-xxl);
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 100%;
+    width: 100%;
+    padding: var(--padding-s);
+    mask-image: linear-gradient(to right, transparent, black 18px, black calc(100% - 18px), transparent);
+}
+
+.bird__images-list > * {
+    flex: 0 0 30%;
+}

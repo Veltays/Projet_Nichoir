@@ -15,7 +15,7 @@
     min-height: 0;
     overflow-y: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     align-content: start;
     gap: var(--gap-xxl);
     padding: var(--padding-l);
@@ -32,15 +32,17 @@
     color: var(--color-dark-green);
     font-family: var(--font-family-primary);
     transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    position: relative;
 }
 
-@media (hover: hover) {
-    .bird-card:hover {
+
+.bird-card:hover {
         transform: translateY(-3px);
         border-color: var(--color-light-orange);
         box-shadow: 0 8px 18px rgba(40, 54, 24, 0.1);
-    }
+        transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
+
 
 .bird-card img {
     display: block;
@@ -83,12 +85,11 @@
     padding-bottom: 8px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .bird-card {
-        transition: none;
-    }
 
-    .bird-card:hover {
-        transform: none;
-    }
+
+.bird-card__link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    cursor: pointer;
 }

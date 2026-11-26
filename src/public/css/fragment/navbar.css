@@ -7,6 +7,14 @@
     background-color: var(--color-dark-green);
     width: var(--size-navbar-width);
     height: var(--size-navbar-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--padding-l);
+}
+
+.navbar__header {
+    flex-shrink: 0;
 }
 
 
@@ -14,7 +22,7 @@
     padding-top: var(--padding-xl);
     padding-left: 0;
     width: var(--size-navbar-content-width);
-    height: var(--size-navbar-logo-height);
+    height: auto;
 }
 
 
@@ -81,10 +89,11 @@
 /*          ====  NAVBAR CATEGORY  ====          */
 /*************************************************/
 
-
+.navbar__category{
+    padding-top: var(--padding-xl);
+}
 
 .navbar__category-name{
-    padding-top: var(--padding-xxxl);
     padding-left: var(--padding-xl);
 }
 
@@ -169,5 +178,21 @@
     text-transform:capitalize;
 }
 
+.navbar__choice-link {
+    color: var(--color-white);
+    font-size: var(--font-size-m);
+    font-family: var(--font-family-primary);
+    text-transform: capitalize;
+    text-decoration: none;
+    opacity: var(--opacity-muted);
+    font-weight: var(--font-weight-semi-bold);
+}
 
 
+
+.navbar__choice:hover{
+    background-color: var(--color-light-green);
+    border-radius: var(--radius-m);
+    transition: all 0.3s ease-in-out;
+    scale: 1.05;
+}

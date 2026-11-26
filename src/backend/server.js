@@ -29,22 +29,20 @@ function initializeMiddleware(app) {
     // Middleware pour parser le corps des requêtes en JSON.
     app.use(express.json());
 
-    // Middleware pour parser le corps des requêtes en JSON.
-    app.use(express.json());
-
     // Middleware pour logger les requêtes HTTP.
     app.use(requestLogger);
+
+    // Middleware pour servir les fichiers statiques.
+    app.use(express.static("public"));
 
     // Middleware pour gérer les routes de l'API.
     app.use("/api", apiRouter);
 
-    // Middleware pour gérer les routes de l'API.
+    // Middleware pour gérer les routes introuvables.
     app.use((request, response) => {
         return sendError(response, "Route introuvable", 404);
     });
 
-    
     // Middleware pour gérer les erreurs.
     app.use(handleError);
 }
-

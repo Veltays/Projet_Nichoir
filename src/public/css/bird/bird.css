@@ -1,0 +1,49 @@
+@import url("../token/color.css");
+@import url("../token/font.css");
+@import url("../token/font-size.css");
+@import url("../token/bold.css");
+@import url("../token/radius.css");
+@import url("../token/padding.css");
+@import url("../token/gap.css");
+@import url("../token/size.css");
+@import url("../token/opacity.css");
+
+@import url("./header.css");
+@import url("./summary.css");
+@import url("./bird-data.css");
+@import url("./gallery.css");
+@import url("./geographic.css");
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    height: 100%;
+}
+
+body{
+    width: var(--size-full);
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+
+
+.bird__main-container{
+   flex: 1;
+    min-height: 0;
+    background-color: var(--color-light-gray);
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: var(--gap-xxl);
+    padding: var(--padding-xxl);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
