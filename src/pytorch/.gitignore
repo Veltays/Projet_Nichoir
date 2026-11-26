@@ -1,0 +1,9 @@
+# Les datasets restent en local : ils sont trop volumineux pour Git.
+dataset/
+
+# Images utilisées uniquement pour tester les prédictions localement.
+src/test_image/
+
+# Fichiers temporaires générés par Python.
+__pycache__/
+*.py[cod]
